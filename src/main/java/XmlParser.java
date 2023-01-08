@@ -17,13 +17,10 @@ public class XmlParser {
 
     public static String parser(String file) {
         try {
-            // tworzymy instancję fabryki
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            // przeneanalizuj dokument users.xml
             DocumentBuilder builder = factory.newDocumentBuilder();
 //            Document document = builder.parse("users.xml");
             Document document = builder.parse(file);
-            // get users
             NodeList nodeList = document.getDocumentElement().getChildNodes();
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Node node = nodeList.item(i);
