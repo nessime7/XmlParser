@@ -8,11 +8,12 @@ import java.io.IOException;
 
 public class XmlParser {
 
-    public String parser(String file) {
+    public String parser(String fileName) {
+        final var resultBuilder = new StringBuilder();
         try {
             final var factory = DocumentBuilderFactory.newInstance();
             final var builder = factory.newDocumentBuilder();
-            final var document = builder.parse(file);
+            final var document = builder.parse(fileName);
             final var nodeList = document.getDocumentElement().getChildNodes();
             for (int i = 0; i < nodeList.getLength(); i++) {
                 final var node = nodeList.item(i);
@@ -21,14 +22,14 @@ public class XmlParser {
                     final var name = element.getElementsByTagName("name").item(0).getTextContent();
                     final var email = element.getElementsByTagName("email").item(0).getTextContent();
                     final var userName = element.getElementsByTagName("username").item(0).getTextContent();
-                    file = ("name: " + name + " email: " + email + " userName: " + userName);
-                    //   System.out.println("name: " + name + " email: " + email + " userName: " + userName);
+                    resultBuilder.append("name: ").append(name).append(" email: ").append(email).append(" userName: ").append(userName).append("\n");
                 }
             }
+
         } catch (SAXException | IOException | ParserConfigurationException e) {
             System.err.println("Error parsing XML: " + e.getMessage());
         }
-        return file;
+        return resultBuilder.toString();
     }
 
 }
