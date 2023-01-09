@@ -6,7 +6,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class XmlParser {
+public class Parser {
 
     public String parser(String file) {
         try {
@@ -24,7 +24,6 @@ public class XmlParser {
                     System.out.println("name: " + name + " email: " + email + " userName: " + userName);
                 }
             }
-            // I want my error message to be red.
         } catch (SAXException | IOException | ParserConfigurationException e) {
             System.err.println("Error parsing XML: " + e.getMessage());
         }
