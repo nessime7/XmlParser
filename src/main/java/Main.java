@@ -5,5 +5,4 @@ public class Main {
         final var parsedMessage = new XmlParser().parser(filePath);
         new XmlPrinter().print(parsedMessage);
     }
-
 }

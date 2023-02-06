@@ -31,5 +31,4 @@ public class XmlParser {
         }
         return resultBuilder.toString();
     }
-
 }
