@@ -22,7 +22,7 @@ public class XmlParser {
                     final var name = element.getElementsByTagName("name").item(0).getTextContent();
                     final var email = element.getElementsByTagName("email").item(0).getTextContent();
                     final var userName = element.getElementsByTagName("username").item(0).getTextContent();
-                    resultBuilder.append("name: ").append(name).append(" email: ").append(email).append(" userName: ").append(userName).append("\n");
+                    resultBuilder.append("name: ").append(name).append("\n").append(" email: ").append(email).append("\n").append(" userName: ").append(userName).append("\n");
                 }
             }
 
